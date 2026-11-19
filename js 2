@@ -1,0 +1,17 @@
+function calculateResult(answers) {
+  const scores = {
+    technology: 0,
+    creative: 0,
+    business: 0,
+    social: 0
+  };
+
+  answers.forEach(answer => {
+    scores[answer.category]++;
+  });
+
+  const result = Object.entries(scores)
+    .sort((a, b) => b[1] - a[1]);
+
+  return result;
+}
